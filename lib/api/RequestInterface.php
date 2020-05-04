@@ -6,7 +6,5 @@ namespace Api;
 
 interface RequestInterface
 {
-    public function validate();
-
-    public function toArray(): array;
+    public function perform(RequestDataInterface $data): ResponseInterface;
 }

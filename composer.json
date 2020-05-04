@@ -15,5 +15,10 @@
     "config": {
         "optimize-autoloader": true
     },
-    "require": {}
+    "require": {
+        "ext-mbstring": "*",
+        "ext-curl": "*",
+        "ext-http": "*",
+        "ext-simplexml": "*"
+    }
 }

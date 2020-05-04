@@ -3,10 +3,10 @@
 
 namespace Api\Amazon\Shipping;
 
-use Api\RequestInterface;
+use Api\RequestDataInterface;
 use Exceptions\ApiInvalidValueException;
 
-class CreateFulfillmentOrderItem implements RequestInterface
+class CreateFulfillmentOrderItem implements RequestDataInterface
 {
     /** @var string */
     public $sellerSKU;

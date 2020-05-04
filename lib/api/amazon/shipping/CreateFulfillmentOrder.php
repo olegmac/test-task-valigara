@@ -3,10 +3,10 @@
 
 namespace Api\Amazon\Shipping;
 
-use Api\RequestInterface;
+use Api\RequestDataInterface;
 use Exceptions\ApiInvalidValueException;
 
-class CreateFulfillmentOrder implements RequestInterface
+class CreateFulfillmentOrder implements RequestDataInterface
 {
     /** @var string */
     public $marketplaceId;
@@ -41,8 +41,8 @@ class CreateFulfillmentOrder implements RequestInterface
     /** @var string */
     public $fulfillmentPolicy;
 
-    /** @var string */
-    public $notificationEmailList;
+    /** @var array */
+    public $notificationEmailList = [];
 
     /** @var string */
     public $cODSettings;
@@ -108,7 +108,7 @@ class CreateFulfillmentOrder implements RequestInterface
                 }
                 $orderValue = $items;
             }
-            if ($orderValue === null) {
+            if ($orderValue === null || $orderValue === []) {
                 continue;
             }
             $orderKey = ucfirst($orderKey);
